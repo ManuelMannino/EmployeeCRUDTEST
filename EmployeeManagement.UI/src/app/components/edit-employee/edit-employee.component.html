@@ -1,0 +1,31 @@
+<div *ngIf="employee" style="margin: 10px;">
+    <hr>
+    <h2 style="color: white;">{{employee.firstName}} {{employee.lastName}}</h2>
+    <form class="example-form">
+        <mat-form-field appearance="fill" color="accent">
+            <mat-label>Firstname:</mat-label>
+            <input matInput [(ngModel)]="employee.firstName" name="firtsname" placeholder="Firstname" />
+        </mat-form-field>
+        <mat-form-field appearance="fill" color="accent">
+            <mat-label>Lastname:</mat-label>
+            <input matInput [(ngModel)]="employee.lastName" name="lastname" placeholder="Lastname" />
+        </mat-form-field>
+        <mat-form-field appearance="fill" color="accent">
+            <mat-label>Email:</mat-label>
+            <input matInput [(ngModel)]="employee.email" name="email" placeholder="Email" />
+        </mat-form-field>
+        <mat-form-field appearance="fill" color="accent">
+            <mat-label>Phone number:</mat-label>
+            <input matInput [(ngModel)]="employee.phoneNumber" name="phonenamber" placeholder="PhoneNumber" />
+        </mat-form-field>
+    </form>
+    <div>
+        <button mat-raised-button color="accent" (click)="updateEmployee(employee)" *ngIf="employee.id"
+            style="margin: 5px;">Save</button>
+        <button mat-raised-button color="warn" (click)="deleteEmployee(employee)" *ngIf="employee.id"
+            style="margin: 5px;">Delete</button>
+        <button mat-raised-button color="accent" (click)="createEmployee(employee)" *ngIf="!employee.id"
+            style="margin: 5px;">Create</button>
+    </div>
+
+</div>
